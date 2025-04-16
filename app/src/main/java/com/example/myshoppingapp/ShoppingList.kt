@@ -6,7 +6,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-//import androidx.compose.foundation.layout.FlowColumnScopeInstance.align
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -52,20 +51,7 @@ fun myshoppingapp(){
     var showDialog by remember { mutableStateOf(false) }
     var itemName by remember{ mutableStateOf("") }
     var itemQuantity by remember { mutableStateOf("") }
-//     Column(modifier= Modifier.fillMaxSize(),
-////        verticalArrangement= Arrangement.Center
-////    ){
-////        Button(
-////            onClick = {showDialog=true},
-////            modifier= Modifier.align(Alignment.CenterHorizontally)
-////        ) {
-////            //val doubleNumber:(Int) ->Int={ it * 2 }
-////            //Text(doubleNumber(5).toString())
-////            Text("Add Items")
-////        }
-////        LazyColumn(
-////            modifier = Modifier.fillMaxSize().padding(16.dp)
-////        )
+    
  Column(
     modifier = Modifier
         .fillMaxSize()
@@ -94,12 +80,6 @@ fun myshoppingapp(){
             item ->
         if (item.isEditing) {
             ShoppingItemEditor(item = item, onEditComplete = { editedName, editedQuantity ->
-//                        sItems=sItems.map{it.copy(isEditing = false)}
-//                        val editedItem=sItems.find{it.id==item.id}
-//                        editedItem?.let {
-//                            it.name=editedName
-//                            it.quantity=editedQuantity
-//                        }
                         sItems = sItems.map { currentItem ->
                             if (currentItem.id == item.id) {
                                 currentItem.copy(
